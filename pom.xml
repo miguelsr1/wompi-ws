@@ -171,7 +171,7 @@
             </activation>
             <properties>
                 <skipITs>false</skipITs>
-                <quarkus.native.package>true</quarkus.native.package>
+                <quarkus.package.type>native</quarkus.package.type>
             </properties>
         </profile>
     </profiles>

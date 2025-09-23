@@ -8,7 +8,7 @@ import lombok.ToString;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TarjetaCreditoDebito {
+public class TarjetaCreditoDebido {
     @ToString.Exclude
     private String numeroTarjeta;
     @ToString.Exclude

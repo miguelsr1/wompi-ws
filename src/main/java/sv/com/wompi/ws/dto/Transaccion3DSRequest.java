@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Transaccion3DSRequest {
-    private TarjetaCreditoDebito tarjetaCreditoDebido;
+    private TarjetaCreditoDebido tarjetaCreditoDebido;
     private double monto;
     private String urlRedirect;
     private String nombre;

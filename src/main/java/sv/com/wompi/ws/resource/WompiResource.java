@@ -33,11 +33,7 @@ public class WompiResource {
             content = @Content(mediaType = "application/json",
                     schema = @Schema(implementation = Transaccion3DSResponse.class))
     )
-    public Response crearTransaccion3DS(
-            @RequestBody(required = true,
-                    content = @Content(mediaType = "application/json",
-                            schema = @Schema(implementation = Transaccion3DSRequest.class)))
-            Transaccion3DSRequest request) {
+    public Response crearTransaccion3DS(Transaccion3DSRequest request) {
         return wompiService.crearTransaccion3DS(request);
     }
 
