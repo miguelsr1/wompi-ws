@@ -1,0 +1,84 @@
+2025-09-22 22:02:19,605 development C:\Users\migue\.jdks\corretto-21.0.7\bin\java.exe[28308] INFO  [io.quarkus] (Quarkus Main Thread) wompi-ws 1.0.0 on JVM (powered by Quarkus 3.20.2.2) started in 3.064s. Listening on: http://0.0.0.0:8080
+2025-09-22 22:02:19,607 development C:\Users\migue\.jdks\corretto-21.0.7\bin\java.exe[28308] INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2025-09-22 22:02:19,607 development C:\Users\migue\.jdks\corretto-21.0.7\bin\java.exe[28308] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [cdi, hibernate-validator, rest, rest-client, rest-client-jackson, rest-jackson, smallrye-context-propagation, smallrye-openapi, swagger-ui, vertx]
+2025-09-22 22:03:32,907 development C:\Users\migue\.jdks\corretto-21.0.7\bin\java.exe[28308] INFO  [sv.com.wom.ws.ser.WompiService] (executor-thread-1) REQUEST PAGO: {"tarjetaCreditoDebido":{"numeroTarjeta":"4118410000950117","cvv":"202","mesVencimiento":4,"anioVencimiento":2027},"monto":0.01,"urlRedirect":"https://salvatier.com.sv","nombre":"MIGUEL ISAAC","apellido":"SANCHEZ","email":"miguelsr1@gmail.com","ciudad":"SAN SALVADOR","direccion":"SAN SALVADOR","idPais":"SV","idRegion":"SV-SS","codigoPostal":"10101","telefono":"77416835"}
+2025-09-22 22:03:33,563 development C:\Users\migue\.jdks\corretto-21.0.7\bin\java.exe[28308] INFO  [sv.com.wom.ws.ser.WompiService] (executor-thread-1) Wompi token refreshed successfully
+2025-09-22 22:03:34,202 development C:\Users\migue\.jdks\corretto-21.0.7\bin\java.exe[28308] ERROR [sv.com.wom.ws.ser.WompiService] (executor-thread-1) Error creating 3DS transaction: org.jboss.resteasy.reactive.ClientWebApplicationException: Received: 'Bad Request, status code 400' when invoking REST Client method: 'sv.com.wompi.ws.client.WompiClient#crearTransaccion3DS'
+	at org.jboss.resteasy.reactive.client.impl.RestClientRequestContext.unwrapException(RestClientRequestContext.java:205)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.handleException(AbstractResteasyReactiveContext.java:329)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:175)
+	at io.smallrye.context.impl.wrappers.SlowContextualRunnable.run(SlowContextualRunnable.java:19)
+	at org.jboss.resteasy.reactive.client.handlers.ClientSwitchToRequestContextRestHandler$1$1.handle(ClientSwitchToRequestContextRestHandler.java:38)
+	at org.jboss.resteasy.reactive.client.handlers.ClientSwitchToRequestContextRestHandler$1$1.handle(ClientSwitchToRequestContextRestHandler.java:35)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:270)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:252)
+	at io.vertx.core.impl.ContextInternal.lambda$runOnContext$0(ContextInternal.java:50)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:566)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: jakarta.ws.rs.WebApplicationException: Bad Request, status code 400
+	at io.quarkus.rest.client.reactive.runtime.DefaultMicroprofileRestClientExceptionMapper.toThrowable(DefaultMicroprofileRestClientExceptionMapper.java:19)
+	at io.quarkus.rest.client.reactive.runtime.MicroProfileRestClientResponseFilter.filter(MicroProfileRestClientResponseFilter.java:54)
+	at org.jboss.resteasy.reactive.client.handlers.ClientResponseFilterRestHandler.handle(ClientResponseFilterRestHandler.java:21)
+	at org.jboss.resteasy.reactive.client.handlers.ClientResponseFilterRestHandler.handle(ClientResponseFilterRestHandler.java:10)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.invokeHandler(AbstractResteasyReactiveContext.java:231)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	... 14 more
+
+2025-09-22 22:03:37,665 development C:\Users\migue\.jdks\corretto-21.0.7\bin\java.exe[28308] ERROR [io.qua.ver.htt.run.QuarkusErrorHandler] (executor-thread-1) HTTP Request to /api/wompi/transaccion/3ds failed, error id: 97d6e1df-3afc-4a13-a07d-0d09f9140366-1: java.lang.RuntimeException: Failed to create 3DS transaction
+	at sv.com.wompi.ws.service.WompiService.crearTransaccion3DS(WompiService.java:67)
+	at sv.com.wompi.ws.service.WompiService_ClientProxy.crearTransaccion3DS(Unknown Source)
+	at sv.com.wompi.ws.resource.WompiResource.crearTransaccion3DS(WompiResource.java:40)
+	at sv.com.wompi.ws.resource.WompiResource$quarkusrestinvoker$crearTransaccion3DS_8e145e670f8cd08c1202436645739254d7628d8f.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$15.runWith(VertxCoreRecorder.java:638)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2675)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2654)
+	at org.jboss.threads.EnhancedQueueExecutor.runThreadBody(EnhancedQueueExecutor.java:1627)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1594)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.jboss.resteasy.reactive.ClientWebApplicationException: Received: 'Bad Request, status code 400' when invoking REST Client method: 'sv.com.wompi.ws.client.WompiClient#crearTransaccion3DS'
+	at org.jboss.resteasy.reactive.client.impl.RestClientRequestContext.unwrapException(RestClientRequestContext.java:205)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.handleException(AbstractResteasyReactiveContext.java:329)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:175)
+	at io.smallrye.context.impl.wrappers.SlowContextualRunnable.run(SlowContextualRunnable.java:19)
+	at org.jboss.resteasy.reactive.client.handlers.ClientSwitchToRequestContextRestHandler$1$1.handle(ClientSwitchToRequestContextRestHandler.java:38)
+	at org.jboss.resteasy.reactive.client.handlers.ClientSwitchToRequestContextRestHandler$1$1.handle(ClientSwitchToRequestContextRestHandler.java:35)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:270)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:252)
+	at io.vertx.core.impl.ContextInternal.lambda$runOnContext$0(ContextInternal.java:50)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:566)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	... 2 more
+Caused by: jakarta.ws.rs.WebApplicationException: Bad Request, status code 400
+	at io.quarkus.rest.client.reactive.runtime.DefaultMicroprofileRestClientExceptionMapper.toThrowable(DefaultMicroprofileRestClientExceptionMapper.java:19)
+	at io.quarkus.rest.client.reactive.runtime.MicroProfileRestClientResponseFilter.filter(MicroProfileRestClientResponseFilter.java:54)
+	at org.jboss.resteasy.reactive.client.handlers.ClientResponseFilterRestHandler.handle(ClientResponseFilterRestHandler.java:21)
+	at org.jboss.resteasy.reactive.client.handlers.ClientResponseFilterRestHandler.handle(ClientResponseFilterRestHandler.java:10)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.invokeHandler(AbstractResteasyReactiveContext.java:231)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	... 14 more
+
+2025-09-22 22:06:23,839 development C:\Users\migue\.jdks\corretto-21.0.7\bin\java.exe[28308] INFO  [sv.com.wom.ws.ser.WompiService] (executor-thread-1) REQUEST PAGO: {"tarjetaCreditoDebido":{"numeroTarjeta":"4118410008950117","cvv":"202","mesVencimiento":4,"anioVencimiento":2027},"monto":0.01,"urlRedirect":"https://salvatier.com.sv","nombre":"MIGUEL ISAAC","apellido":"SANCHEZ","email":"miguelsr1@gmail.com","ciudad":"SAN SALVADOR","direccion":"SAN SALVADOR","idPais":"SV","idRegion":"SV-SS","codigoPostal":"10101","telefono":"77416835"}
+2025-09-22 22:06:27,446 development C:\Users\migue\.jdks\corretto-21.0.7\bin\java.exe[28308] INFO  [sv.com.wom.ws.ser.WompiService] (executor-thread-1) RESPONSE PAGO: {"idTransaccion":"f75806f7-5a5a-4f13-b182-7da0bb837816","esReal":true,"urlCompletarPago3Ds":"https://pagos.wompi.sv/IntentoPago/FinalizarTransaccionApi3ds?id\u003df75806f7-5a5a-4f13-b182-7da0bb837816","monto":0.01}
+2025-09-22 22:06:39,325 development C:\Users\migue\.jdks\corretto-21.0.7\bin\java.exe[28308] INFO  [sv.com.wom.ws.ser.WompiService] (executor-thread-1) REQUEST PAGO: {"tarjetaCreditoDebido":{"numeroTarjeta":"4118410000950117","cvv":"202","mesVencimiento":4,"anioVencimiento":2027},"monto":0.01,"urlRedirect":"https://salvatier.com.sv","nombre":"MIGUEL ISAAC","apellido":"SANCHEZ","email":"miguelsr1@gmail.com","ciudad":"SAN SALVADOR","direccion":"SAN SALVADOR","idPais":"SV","idRegion":"SV-SS","codigoPostal":"10101","telefono":"77416835"}
+2025-09-22 22:22:49,353 development C:\Users\migue\.jdks\corretto-21.0.7\bin\java.exe[10372] INFO  [io.quarkus] (Quarkus Main Thread) wompi-ws 1.0.0 on JVM (powered by Quarkus 3.20.2.2) started in 2.651s. Listening on: http://0.0.0.0:8080
+2025-09-22 22:22:49,354 development C:\Users\migue\.jdks\corretto-21.0.7\bin\java.exe[10372] INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2025-09-22 22:22:49,355 development C:\Users\migue\.jdks\corretto-21.0.7\bin\java.exe[10372] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [cdi, hibernate-validator, rest, rest-client, rest-client-jackson, rest-jackson, smallrye-context-propagation, smallrye-openapi, swagger-ui, vertx]
+2025-09-22 22:22:57,987 development C:\Users\migue\.jdks\corretto-21.0.7\bin\java.exe[10372] INFO  [sv.com.wom.ws.ser.WompiService] (executor-thread-1) REQUEST PAGO: {"tarjetaCreditoDebido":{"numeroTarjeta":"4118410000950117","cvv":"202","mesVencimiento":4,"anioVencimiento":2027},"monto":0.01,"urlRedirect":"https://salvatier.com.sv","nombre":"MIGUEL ISAAC","apellido":"SANCHEZ","email":"miguelsr1@gmail.com","ciudad":"SAN SALVADOR","direccion":"SAN SALVADOR","idPais":"SV","idRegion":"SV-SS","codigoPostal":"10101","telefono":"77416835"}
+2025-09-22 22:22:58,599 development C:\Users\migue\.jdks\corretto-21.0.7\bin\java.exe[10372] INFO  [sv.com.wom.ws.ser.WompiService] (executor-thread-1) Wompi token refreshed successfully
+2025-09-22 22:22:59,149 development C:\Users\migue\.jdks\corretto-21.0.7\bin\java.exe[10372] ERROR [sv.com.wom.ws.ser.WompiService] (executor-thread-1) ERROR EN LA TRANSACCION: ResponseErrorDto(servicioError=TransaccionCompraController, mensajes=[El número de tarjeta no es válido], subTipoError=null)
