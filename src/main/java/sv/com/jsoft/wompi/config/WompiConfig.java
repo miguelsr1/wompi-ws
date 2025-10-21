@@ -1,4 +1,4 @@
-package sv.com.wompi.ws.config;
+package sv.com.jsoft.wompi.config;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 

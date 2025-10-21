@@ -1,4 +1,4 @@
-package sv.com.wompi.ws.dto;
+package sv.com.jsoft.wompi.dto;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
 

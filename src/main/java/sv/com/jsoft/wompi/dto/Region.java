@@ -1,11 +1,13 @@
-package sv.com.wompi.ws.dto;
+package sv.com.jsoft.wompi.dto;
 
+import java.util.List;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @RegisterForReflection
-public class Territorio {
+public class Region {
     private String id;
     private String nombre;
+    private List<Territorio> territorios;
 
     // Getters y Setters
     public String getId() {
@@ -22,5 +24,13 @@ public class Territorio {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public List<Territorio> getTerritorios() {
+        return territorios;
+    }
+
+    public void setTerritorios(List<Territorio> territorios) {
+        this.territorios = territorios;
     }
 }

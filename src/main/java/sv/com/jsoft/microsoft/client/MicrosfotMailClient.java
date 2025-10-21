@@ -1,5 +1,7 @@
 package sv.com.jsoft.microsoft.client;
 
+import io.quarkus.security.Authenticated;
+import jakarta.ws.rs.HeaderParam;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
@@ -12,5 +14,5 @@ public interface MicrosfotMailClient {
 
     @POST
     @Path("v1.0/users/{from}/sendMail")
-    Response sendMail(@PathParam("from") String from, SendMailRequest request);
+    Response sendMail(@HeaderParam("Authorization") String authorization, @PathParam("from") String from, String request);
 }

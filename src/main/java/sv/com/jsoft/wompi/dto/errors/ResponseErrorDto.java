@@ -1,4 +1,4 @@
-package sv.com.wompi.ws.dto.errors;
+package sv.com.jsoft.wompi.dto.errors;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

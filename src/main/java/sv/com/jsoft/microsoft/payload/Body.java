@@ -3,8 +3,7 @@ package sv.com.jsoft.microsoft.payload;
 import lombok.Data;
 
 @Data
-public class AttachmentRequest {
-    private String base64File;
+public class Body {
     private String contentType;
-    private String name;
+    private String content;
 }

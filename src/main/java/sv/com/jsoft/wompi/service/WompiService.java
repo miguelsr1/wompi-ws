@@ -1,18 +1,21 @@
-package sv.com.wompi.ws.service;
+package sv.com.jsoft.wompi.service;
 
 import com.google.gson.Gson;
 import io.quarkus.logging.Log;
 import jakarta.ws.rs.core.Response;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jboss.resteasy.reactive.ClientWebApplicationException;
-import sv.com.wompi.ws.client.WompiClient;
-import sv.com.wompi.ws.client.WompiClientId;
-import sv.com.wompi.ws.config.WompiConfig;
-import sv.com.wompi.ws.dto.*;
+import sv.com.jsoft.wompi.client.WompiClient;
+import sv.com.jsoft.wompi.client.WompiClientId;
+import sv.com.jsoft.wompi.config.WompiConfig;
+import sv.com.jsoft.wompi.dto.Region;
+import sv.com.jsoft.wompi.dto.TokenResponse;
+import sv.com.jsoft.wompi.dto.Transaccion3DSRequest;
+import sv.com.jsoft.wompi.dto.Transaccion3DSResponse;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import sv.com.wompi.ws.dto.errors.ResponseErrorDto;
+import sv.com.jsoft.wompi.dto.errors.ResponseErrorDto;
 
 import java.util.List;
 

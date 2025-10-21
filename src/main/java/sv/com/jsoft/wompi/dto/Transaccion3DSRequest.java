@@ -1,4 +1,4 @@
-package sv.com.wompi.ws.dto;
+package sv.com.jsoft.wompi.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

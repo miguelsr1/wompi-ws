@@ -1,10 +1,10 @@
-package sv.com.wompi.ws.client;
+package sv.com.jsoft.wompi.client;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 import org.jboss.resteasy.reactive.RestForm;
-import sv.com.wompi.ws.dto.TokenResponse;
+import sv.com.jsoft.wompi.dto.TokenResponse;
 
 
 @RegisterRestClient(configKey = "wompi-id")

@@ -1,11 +1,11 @@
-package sv.com.wompi.ws.client;
+package sv.com.jsoft.wompi.client;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
-import sv.com.wompi.ws.dto.Transaccion3DSRequest;
-import sv.com.wompi.ws.dto.Transaccion3DSResponse;
-import sv.com.wompi.ws.dto.Region;
+import sv.com.jsoft.wompi.dto.Transaccion3DSRequest;
+import sv.com.jsoft.wompi.dto.Transaccion3DSResponse;
+import sv.com.jsoft.wompi.dto.Region;
 import java.util.List;
 
 @RegisterRestClient(configKey = "wompi-api")
